@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+requirements-dev.txt
+requirements.txt
+bydantic/__init__.py
+bydantic/byte_model.py
+bydantic.egg-info/PKG-INFO
+bydantic.egg-info/SOURCES.txt
+bydantic.egg-info/dependency_links.txt
+bydantic.egg-info/requires.txt
+bydantic.egg-info/top_level.txt
+tests/test.py

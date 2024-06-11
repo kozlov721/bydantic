@@ -1,0 +1,53 @@
+[project]
+name = "bydantic"
+version = "0.0.1"
+description = "Pydantic models for byte data."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Martin Kozlovsky", email = "kozlovsky.m7@gmail.com" }]
+maintainers = [{ name = "Martin Kozlovsky", email = "kozlovsky.m7@gmail.com" }]
+keywords = ["validation"]
+dynamic = ["dependencies", "optional-dependencies"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3.10",
+]
+
+[project.urls]
+repository = "https://github.com/kozlov721/bydantic"
+issues = "https://github.com/kozlov721/bydantic/issues"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+modelconverter = ["docker-compose.yaml", "docker-compose-dev.yaml"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[tool.setuptools.dynamic.optional-dependencies]
+dev = { file = ["requirements-dev.txt"] }
+
+[tool.ruff]
+target-version = "py310"
+line-length = 79
+indent-width = 4
+
+[tool.ruff.lint]
+ignore = ["F403", "B028", "B905", "D1", "W191"]
+select = ["E4", "E7", "E9", "F", "W", "B", "I"]
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+
+[tool.pyright]
+typeCheckingMode = "basic"
